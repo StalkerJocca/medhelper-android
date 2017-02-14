@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "106681250117",
+    "firebase_url": "https://medhelper-3c018.firebaseio.com",
+    "project_id": "medhelper-3c018",
+    "storage_bucket": "medhelper-3c018.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:106681250117:android:c34747f838cfafcc",
+        "android_client_info": {
+          "package_name": "com.tecwidgets.medhelper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "106681250117-j24q5t6e5m365a2omba2belkdmqjcmmc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYkes0zyf5x8AGfETXwRidEBsEiRVcATg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

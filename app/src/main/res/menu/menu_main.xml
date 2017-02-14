@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/utentesFrag"
+    android:icon="@drawable/old_man"
+    android:title="Utentes">
+    </item>
+
+    <item android:id="@+id/horariosFrag"
+        android:icon="@drawable/old_man"
+        android:title="Horários">
+    </item>
+
+    <item android:id="@+id/instalacoesFrag"
+        android:icon="@drawable/old_man"
+        android:title="Instalações">
+    </item>
+
+    <item android:id="@+id/medicamentosFrag"
+        android:icon="@drawable/old_man"
+        android:title="Medicamentos">
+    </item>
+
+
+
+
+</menu>

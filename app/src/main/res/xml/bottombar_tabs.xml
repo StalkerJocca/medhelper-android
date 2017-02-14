@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <tabs>
+        <tab
+            id="@+id/tab_utentes"
+            icon="@drawable/old_man"
+            title="Utentes"
+            barColorWhenSelected="#00897B"/>
+        <tab
+            id="@+id/tab_horarios"
+            icon="@drawable/old_man"
+            title="Horários"
+            barColorWhenSelected="#00796B"/>
+
+        <tab
+            id="@+id/tab_empresa"
+            icon="@drawable/old_man"
+            title="Empresa"
+            barColorWhenSelected="#00796B"/>
+
+        <tab
+            id="@+id/tab_instalacoes"
+            icon="@drawable/old_man"
+            title="Instalações"
+            barColorWhenSelected="#00695C"/>
+
+        <tab
+            id="@+id/tab_medicamentos"
+            icon="@drawable/old_man"
+            title="Medicamentos"
+            barColorWhenSelected="#004D40"/>
+    </tabs>
