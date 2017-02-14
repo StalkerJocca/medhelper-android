@@ -43,29 +43,44 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.signup);
 
+
+        //initializing firebase auth object
         firebaseAuth = FirebaseAuth.getInstance();
 
-        progressDialog = new ProgressDialog(this);
+        if (firebaseAuth.getCurrentUser() != null){
+            //profile activity here
+            finish();
+            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+        }
 
-        buttonRegister = (Button) findViewById(R.id.buttonRegister);
+        //initializing views
         editTextEmail = (EditText) findViewById(R.id.editTextMail);
         editTextPassword = (EditText) findViewById(R.id.editTextPassword);
-
         textViewSignin = (TextView) findViewById(R.id.textViewSignin);
 
+        buttonRegister = (Button) findViewById(R.id.buttonRegister);
+        progressDialog = new ProgressDialog(this);
+
+
+
+        //attaching listener to button
         buttonRegister.setOnClickListener(this);
         textViewSignin.setOnClickListener(this);
 
     }
 
     private void registerUser (){
+
+        //getting email and password from edit texts
+
         String email = editTextEmail.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
 
+        //checking if email and passwords are empty
         if (TextUtils.isEmpty(email)){
             // email is empty
 
-            Toast.makeText(this, "Please enter email.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please Enter Email.", Toast.LENGTH_SHORT).show();
             //stopping the function execution further
             return;
         }
@@ -73,13 +88,13 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
         if (TextUtils.isEmpty(password)){
             // password is empty
 
-            Toast.makeText(this, "Please enter password.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please Enter Password.", Toast.LENGTH_SHORT).show();
             //stopping the function execution further
             return;
         }
 
-        //if validations are ok
-        //we will first show a progressbar
+        //if the email and password are not empty
+        //we will first show a progressbar / displaying a progress dialog
 
         progressDialog.setMessage("Registering User...");
         progressDialog.show();
@@ -89,6 +104,8 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
+                                finish();
+                                startActivity(new Intent(getApplicationContext(), MainActivity.class));
                             //user is successfully registered and logged in
                             //we will start the ACTIVITY_MAIL.xml
                             //right now lets display a toast only
@@ -110,7 +127,7 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
 
         if (view == textViewSignin){
             //will open login activity here
-
+            startActivity(new Intent(this, LoginActivity.class));
         }
     }
 }

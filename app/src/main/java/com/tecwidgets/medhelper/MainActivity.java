@@ -1,28 +1,52 @@
 package com.tecwidgets.medhelper;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.support.annotation.IdRes;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.BottomBarTab;
 import com.roughike.bottombar.OnTabSelectListener;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     BottomBar mBottomBar;
     DatabaseMedHelper myDb;
+
+    private FirebaseAuth firebaseAuth;
+    private Button buttonLogout;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         myDb = new DatabaseMedHelper(this);
+
+        firebaseAuth = FirebaseAuth.getInstance();
+        if (firebaseAuth.getCurrentUser() == null){
+            finish();
+            startActivity(new Intent(this, LoginActivity.class));
+        }
+
+        FirebaseUser user = firebaseAuth.getCurrentUser();
+
+
+
+        buttonLogout = (Button) findViewById(R.id.buttonLogout);
+
+        buttonLogout.setOnClickListener(this);
 
 
 
@@ -71,5 +95,14 @@ public class MainActivity extends AppCompatActivity {
 
 // Remove the badge when you're done with it.
     //nearby.removeBadge();
+    }
+
+    @Override
+    public void onClick(View view) {
+        if (view == buttonLogout){
+            firebaseAuth.signOut();
+            finish();
+            startActivity(new Intent(this, LoginActivity.class));
+        }
     }
 }
