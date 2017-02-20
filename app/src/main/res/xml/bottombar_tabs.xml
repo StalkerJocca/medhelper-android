@@ -5,9 +5,11 @@
             icon="@drawable/old_man"
             title="Utentes"
             barColorWhenSelected="#4DB6AC"/>
-        <tab
+
+    <tab
             id="@+id/tab_horarios"
             icon="@drawable/old_man"
+            title="Horários"
             barColorWhenSelected="#26A69A"/>
 
         <tab
