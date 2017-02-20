@@ -4,28 +4,27 @@
             id="@+id/tab_utentes"
             icon="@drawable/old_man"
             title="Utentes"
-            barColorWhenSelected="#00897B"/>
+            barColorWhenSelected="#4DB6AC"/>
         <tab
             id="@+id/tab_horarios"
             icon="@drawable/old_man"
-            title="Horários"
-            barColorWhenSelected="#00796B"/>
+            barColorWhenSelected="#26A69A"/>
 
         <tab
             id="@+id/tab_empresa"
             icon="@drawable/old_man"
             title="Empresa"
-            barColorWhenSelected="#00796B"/>
+            barColorWhenSelected="#009688"/>
 
         <tab
             id="@+id/tab_instalacoes"
             icon="@drawable/old_man"
             title="Instalações"
-            barColorWhenSelected="#00695C"/>
+            barColorWhenSelected="#00897B"/>
 
         <tab
             id="@+id/tab_medicamentos"
             icon="@drawable/old_man"
             title="Medicamentos"
-            barColorWhenSelected="#004D40"/>
+            barColorWhenSelected="#00796B"/>
     </tabs>

@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -25,7 +26,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     DatabaseMedHelper myDb;
 
     private FirebaseAuth firebaseAuth;
-    private Button buttonLogout;
+    private ImageButton buttonLogout;
 
 
     @Override
@@ -44,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
 
-        buttonLogout = (Button) findViewById(R.id.buttonLogout);
+        buttonLogout = (ImageButton) findViewById(R.id.buttonLogout);
 
         buttonLogout.setOnClickListener(this);
 
