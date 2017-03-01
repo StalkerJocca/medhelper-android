@@ -1,5 +1,6 @@
 package com.tecwidgets.medhelper;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.content.Intent;
 import android.support.annotation.IdRes;
@@ -10,39 +11,35 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
-
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.BottomBarTab;
 import com.roughike.bottombar.OnTabSelectListener;
 
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener, utentesFragment.OnHeadlineSelectedListener{
 
     BottomBar mBottomBar;
-    DatabaseMedHelper myDb;
 
-    private FirebaseAuth firebaseAuth;
+    EditText ET_NOME,ET_NOME_USER,ET_NOME_PASS;
+    String nome,nome_user,nome_pass;
     private ImageButton buttonLogout;
 
+
+    @Override
+    public void onArticleSelected(int position) {
+        startActivity(new Intent(MainActivity.this,createUtente.class));
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        myDb = new DatabaseMedHelper(this);
 
-        firebaseAuth = FirebaseAuth.getInstance();
-        if (firebaseAuth.getCurrentUser() == null){
-            finish();
-            startActivity(new Intent(this, LoginActivity.class));
-        }
-
-        FirebaseUser user = firebaseAuth.getCurrentUser();
-
+        ET_NOME = (EditText)findViewById(R.id.editTextMail);
+        ET_NOME_PASS = (EditText)findViewById(R.id.editTextPassword);
 
 
         buttonLogout = (ImageButton) findViewById(R.id.buttonLogout);
@@ -98,12 +95,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     //nearby.removeBadge();
     }
 
+    public void userReg(View view) {
+        startActivity(new Intent(this,SignupActivity.class));
+    }
+
+    public void userLogin(View view){
+        nome_user = ET_NOME.getText().toString();
+        String method = "login";
+        BackgroundTask backgroundTask = new BackgroundTask(this);
+        backgroundTask.execute(method, nome_user, nome_pass);
+    }
+
+
+
+
+
     @Override
     public void onClick(View view) {
         if (view == buttonLogout){
-            firebaseAuth.signOut();
             finish();
             startActivity(new Intent(this, LoginActivity.class));
         }
-    }
+  }
+
+
 }

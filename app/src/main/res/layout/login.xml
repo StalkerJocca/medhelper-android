@@ -13,37 +13,16 @@
         android:paddingLeft="24dp"
         android:paddingRight="24dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="LOGIN"
-            android:layout_gravity="center" />
+
 
         <!-- IMAGE LABEL -->
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="100dp"
-            android:src="@drawable/logo"
+            android:src="@drawable/doc"
             android:layout_marginBottom="2dp"
             android:layout_gravity="center_horizontal"/>
-
-        <!-- NAME LABEL -->
-
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <EditText
-            android:layout_margin="15dp"
-            android:inputType="textPersonName"
-            android:hint="Enter your name:"
-            android:id="@+id/editTextName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        </android.support.design.widget.TextInputLayout>
-
 
         <!-- EMAIL LABEL -->
 
@@ -53,7 +32,7 @@
         <EditText
             android:layout_margin="15dp"
             android:inputType="textEmailAddress"
-            android:hint="Enter your email:"
+            android:hint="Insira o seu Email:"
             android:id="@+id/editTextMail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
@@ -77,7 +56,7 @@
         <Button
             android:layout_margin="15dp"
             android:id="@+id/buttonSignIn"
-            android:text="Sign in"
+            android:text="Entrar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             />
@@ -86,7 +65,7 @@
 
         <TextView
             android:textAlignment="center"
-            android:text="Dont have an account? Click here!"
+            android:text="Não possui uma conta? Crie uma aqui!"
             android:id="@+id/textViewSignUp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />

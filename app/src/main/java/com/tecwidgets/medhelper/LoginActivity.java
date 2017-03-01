@@ -18,7 +18,7 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
+
 
 
 /**
@@ -32,7 +32,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private EditText editTextPassword;
     private TextView textViewSignup;
 
-    private FirebaseAuth firebaseAuth;
+
 
 
 
@@ -44,13 +44,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
 
-        firebaseAuth = FirebaseAuth.getInstance();
 
-        if (firebaseAuth.getCurrentUser() != null){
-            //profile activity here
-            finish();
-            startActivity(new Intent(getApplicationContext(), MainActivity.class));
-        }
 
         editTextEmail = (EditText) findViewById(R.id.editTextMail);
         editTextPassword = (EditText) findViewById(R.id.editTextPassword);
@@ -93,20 +87,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         progressDialog.setMessage("Connecting to server...");
         progressDialog.show();
 
-        firebaseAuth.signInWithEmailAndPassword(email,password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        progressDialog.dismiss();
-
-                        if (task.isSuccessful()){
-                            //start the profile activity
-                            finish();
-                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                        }
-                    }
-                });
-
     }
 
     @Override
@@ -116,7 +96,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }
         if (view == textViewSignup){
             finish();
-            startActivity(new Intent(this, MainActivity.class));
+            startActivity(new Intent(this, SignupActivity.class));
         }
     }
 }

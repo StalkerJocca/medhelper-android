@@ -18,47 +18,62 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="100dp"
-            android:src="@drawable/logo"
+            android:src="@drawable/doc"
             android:layout_marginBottom="2dp"
             android:layout_gravity="center_horizontal"/>
 
         <!-- NAME LABEL -->
 
-        <EditText
-            android:layout_margin="15dp"
-            android:inputType="textPersonName"
-            android:hint="Enter your name:"
-            android:id="@+id/editTextName"
+        <!-- NAME LABEL -->
+
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content">
+            <EditText
+                android:layout_margin="15dp"
+                android:inputType="textEmailAddress"
+                android:hint="Insira o seu Nome:"
+                android:id="@+id/editTextName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </android.support.design.widget.TextInputLayout>
+
 
 
         <!-- EMAIL LABEL -->
 
-        <EditText
-            android:layout_margin="15dp"
-            android:inputType="textEmailAddress"
-            android:hint="Enter your email:"
-            android:id="@+id/editTextMail"
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content">
+            <EditText
+                android:layout_margin="15dp"
+                android:inputType="textEmailAddress"
+                android:hint="Insira o seu Email:"
+                android:id="@+id/editTextMail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </android.support.design.widget.TextInputLayout>
 
         <!-- PASSWORD LABEL -->
 
-        <EditText
-            android:layout_margin="15dp"
-            android:inputType="textPassword"
-            android:hint="Password: "
-            android:id="@+id/editTextPassword"
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content">
+            <EditText
+                android:layout_margin="15dp"
+                android:inputType="textPassword"
+                android:hint="Password: "
+                android:id="@+id/editTextPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </android.support.design.widget.TextInputLayout>
 
         <!-- BUTTON LABEL -->
 
         <Button
             android:layout_margin="15dp"
             android:id="@+id/buttonRegister"
-            android:text="Register User"
+            android:text="Registar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             />
@@ -67,7 +82,7 @@
 
         <TextView
             android:textAlignment="center"
-            android:text="Already registered? Sign in here."
+            android:text="Já se encontra registado? Entre aqui!"
             android:id="@+id/textViewSignin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
